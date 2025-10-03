@@ -1,4 +1,13 @@
 {
+  "CGM_agent": {
+  "file_name": "train.json",
+  "formatting": "sharegpt",
+  "columns": {
+    "messages": "conversations",
+    "system": "system",
+    "tools": "tools"
+    }
+  },
   "identity": {
     "file_name": "identity.json"
   },
@@ -22,6 +31,42 @@
     "columns": {
       "messages": "conversations",
       "tools": "tools"
+    }
+  },
+  "Diabetica": {
+    "file_name": "Diabetica.json",
+    "columns": {
+      "prompt": "query",
+      "response": "response"
+    }
+  },
+  "Diabetica_raw": {
+    "file_name": "Diabetica_raw.json",
+    "columns": {
+      "prompt": "query",
+      "response": "response"
+    }
+  },
+  "Diabetica_5000": {
+    "file_name": "Diabetica_5000.json",
+
+    "columns": {
+      "prompt": "query",
+      "response": "response"
+    }
+  },
+  "Diabetica_raw_unchanged": {
+    "file_name": "Diabetica_raw_unchanged.json",
+    "columns": {
+      "prompt": "query",
+      "response": "response"
+    }
+  },
+  "Diabetica_o1_2048_20000": {
+    "file_name": "Diabetica_o1_2048_20000.json",
+    "columns": {
+      "prompt": "query",
+      "response": "response"
     }
   },
   "mllm_demo": {
@@ -557,6 +602,16 @@
       "chosen": "chosen",
       "rejected": "rejected",
       "images": "images"
+    }
+  },
+  "rlaif_v": {
+    "hf_hub_url": "openbmb/RLAIF-V-Dataset",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected",
+      "images": "image"
     }
   },
   "orca_pairs": {
