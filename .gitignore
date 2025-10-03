@@ -179,8 +179,4 @@ swanlog/
 generated_predictions.jsonl
 predictions_score.json
 
-data/apigen_mt_5k_train.json
-data/apigen_train_merge_filtered_4000.json
-data/xlam_function_calling_60k_train_processed.json
-data/apigen_mt_5k_train_convert_to_json.json
-data/apigen_train_merge.json
+data/
