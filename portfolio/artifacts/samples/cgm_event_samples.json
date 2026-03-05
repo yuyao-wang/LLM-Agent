@@ -1,0 +1,62 @@
+[
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "当前时间是2024-02-23 07:14:25。2月21日中午1点左右吃饭时，我摄入了多少克碳水化合物？"
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"getDayEvents\", \"arguments\": {\"date\": \"2024-02-21\", \"event_type\": \"meal\"}}"
+      },
+      {
+        "from": "observation",
+        "value": "[{\"Time\": \"2024-02-21 08:49:25\", \"TotalBolusInsulinDelivered\": 9.46, \"CarbSize\": 40.0, \"event_type\": \"meal\"}, {\"Time\": \"2024-02-21 13:29:25\", \"TotalBolusInsulinDelivered\": 6.23, \"CarbSize\": 45.0, \"event_type\": \"meal\"}, {\"Time\": \"2024-02-21 01:09:25\", \"TotalBolusInsulinDelivered\": 2.7, \"CarbSize\": 70.0, \"event_type\": \"meal\"}]"
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"getEventsInfo\", \"arguments\": {\"events\": [{\"Time\": \"2024-02-21 01:09:25\", \"event_type\": \"meal\"}], \"question\": \"CarbSize\", \"timespan\": 0}}"
+      },
+      {
+        "from": "observation",
+        "value": "[70.0]"
+      },
+      {
+        "from": "gpt",
+        "value": "问题的答案是[70.0]"
+      }
+    ],
+    "system": "\n你是一个健康助手，可以通过调用工具获取并处理患者数据。用户会提出健康相关的问题，你需要分步推理，通过多轮工具调用查询用户的目标事件和并完成相关计算，最终给出准确回答。\n",
+    "tools": ""
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "当前时间是2024-02-23 07:14:25。2月21日中午1点半左右吃饭时，我摄入了多少克碳水化合物？"
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"getDayEvents\", \"arguments\": {\"date\": \"2024-02-21\", \"event_type\": \"meal\"}}"
+      },
+      {
+        "from": "observation",
+        "value": "[{\"Time\": \"2024-02-21 08:49:25\", \"TotalBolusInsulinDelivered\": 9.46, \"CarbSize\": 40.0, \"event_type\": \"meal\"}, {\"Time\": \"2024-02-21 13:29:25\", \"TotalBolusInsulinDelivered\": 6.23, \"CarbSize\": 45.0, \"event_type\": \"meal\"}, {\"Time\": \"2024-02-21 01:09:25\", \"TotalBolusInsulinDelivered\": 2.7, \"CarbSize\": 70.0, \"event_type\": \"meal\"}]"
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"getEventsInfo\", \"arguments\": {\"events\": [{\"Time\": \"2024-02-21 13:29:25\", \"event_type\": \"meal\"}], \"question\": \"CarbSize\", \"timespan\": 0}}"
+      },
+      {
+        "from": "observation",
+        "value": "[45.0]"
+      },
+      {
+        "from": "gpt",
+        "value": "问题的答案是[45.0]"
+      }
+    ],
+    "system": "\n你是一个健康助手，可以通过调用工具获取并处理患者数据。用户会提出健康相关的问题，你需要分步推理，通过多轮工具调用查询用户的目标事件和并完成相关计算，最终给出准确回答。\n",
+    "tools": ""
+  }
+]

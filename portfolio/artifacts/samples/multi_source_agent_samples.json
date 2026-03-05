@@ -1,0 +1,78 @@
+[
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "\"Can you tell me how many times my glucose dropped quickly this Monday compared to last Tuesday?\""
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"GetGlucoseRocEvents\", \"arguments\": {\"param\": \"decrease\", \"output_type\": \"count\", \"input\": [{\"start\": \"2024-01-01 00:00:00\", \"end\": \"2024-01-01 23:59:59\"}]}}"
+      },
+      {
+        "from": "observation",
+        "value": "[{\"time\": \"2024-01-01 00:00:00 to 2024-01-01 23:59:59\", \"value\": 0}]"
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"GetGlucoseRocEvents\", \"arguments\": {\"param\": \"decrease\", \"output_type\": \"count\", \"input\": [{\"start\": \"2023-12-26 00:00:00\", \"end\": \"2023-12-26 23:59:59\"}]}}"
+      },
+      {
+        "from": "observation",
+        "value": "[{\"time\": \"2023-12-26 00:00:00 to 2023-12-26 23:59:59\", \"value\": 0}]"
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"Statistics\", \"arguments\": {\"param\": \"compare\", \"input\": [0, 0]}}"
+      },
+      {
+        "from": "observation",
+        "value": "{\"larger\": 0, \"smaller\": 0}"
+      },
+      {
+        "from": "gpt",
+        "value": "\"On both this Monday and last Tuesday, there were no rapid decreases in your glucose levels. The counts are the same at zero, so there’s no difference between the two days.\""
+      },
+      {
+        "from": "human",
+        "value": "\"And how much time did I spend in severe hyperglycemia last Tuesday?\""
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"TimeInConditions\", \"arguments\": {\"param\": \"L2Hyperglycemia\", \"input\": [{\"start\": \"2023-12-26 00:00:00\", \"end\": \"2023-12-26 23:59:59\"}]}}"
+      },
+      {
+        "from": "observation",
+        "value": "[{\"time\": \"2023-12-26 00:00:00 to 2023-12-26 23:59:59\", \"value\": 0.0}]"
+      },
+      {
+        "from": "gpt",
+        "value": "\"Last Tuesday, you didn’t spend any time in the severe hyperglycemia range — your glucose stayed below that threshold all day.\""
+      }
+    ],
+    "system": "Current time is 2024-01-02 08:29:00.\nYou are a health monitoring agent provided with a set of tools (functions). Responsibilities:\nTool selection: Choose the appropriate tool(s) based on the user’s query.\nExecution: If tools are needed, return one or more valid tool calls with all required parameters.\nTemporal reasoning: When the query contains natural language time expressions (e.g., \"past week\", \"yesterday morning\"), translate them into precise timestamps or time ranges as tool inputs.\nMulti-turn handling: Some queries may span multiple turns. You should keep track of previous context and compose tool calls accordingly.\nIf no tool is required or suitable, clearly state that. If the query lacks required parameters, explicitly point out what is missing.\ntime_range = {\"start\": \"YYYY-MM-DD HH:MM:SS\", \"end\": \"YYYY-MM-DD HH:MM:SS\"}\nConstraints:\nDo not invent tools outside the provided set.\nAlways follow the required JSON schema for tool calls.\nOnly output tool calls inside the tools call section.\nFunction call JSON Example:\n1. {\"name\": \"FunctionName\", \"arguments\": {\"param1\": \"value1\", \"param2\": \"value2\", \"input\": [{\"start\": \"YYYY-MM-DD HH:MM:SS\", \"end\": \"YYYY-MM-DD HH:MM:SS\", \"label\": \"time label if provided\"}]}}\n2. {\"name\": \"FunctionName\", \"arguments\": {\"param1\": \"value1\", \"param2\": \"value2\"}}\n",
+    "tools": "[{\"name\": \"Statistics\", \"description\": \"Perform basic statistical operations (comparison, delta, max, min, mean, trend) on a list of numerical values.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"compare\", \"delta\", \"max\", \"min\", \"mean\", \"trend\"]}, \"input\": {\"type\": \"array\", \"description\": \"List of numerical values (float or int).\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"TimeInConditions\", \"description\": \"Return the percentage (%) of time that blood glucose stays under the specified condition.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"Hypoglycemia\", \"L1Hypoglycemia\", \"L2Hypoglycemia\", \"Hyperglycemia\", \"L1Hyperglycemia\", \"L2Hyperglycemia\", \"Target\", \"TightTarget\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"GlucoseStats\", \"description\": \"Return statistical measures of blood glucose data. Blood glucose is in mg/dL, CV is in %.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"mean\", \"median\", \"cv\", \"range\", \"iqr\", \"max\", \"min\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"GlucoseRiskMetrics\", \"description\": \"Return blood glucose risk metrics (GMI as %, LBGI/HBGI as indices).\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"gmi\", \"lbgi\", \"hbgi\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"TrendGlucose\", \"description\": \"Return the trend of blood glucose changes over daily statistics.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"input\"]}}, {\"name\": \"GetGlucoseEvents\", \"description\": \"Extract glucose events based on threshold conditions. Return details or count depending on subsequent action.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"Hypoglycemia\", \"L1Hypoglycemia\", \"L2Hypoglycemia\", \"Hyperglycemia\", \"L1Hyperglycemia\", \"L2Hyperglycemia\"]}, \"output_type\": {\"type\": \"string\", \"enum\": [\"time\", \"count\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"GetGlucoseRocEvents\", \"description\": \"Extract rapid rise/fall events based on rate of change (mg/dL/min). Return details or count depending on subsequent action.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"increase\", \"decrease\"]}, \"output_type\": {\"type\": \"string\", \"enum\": [\"time\", \"count\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"GetActivities\", \"description\": \"Retrieve meal and/or insulin events. Units: glucose mg/dL, carbs g, insulin U.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"meal\", \"insulin\", \"all\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}]"
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "\"Can you tell me if my glucose levels had any particular trend the day before yesterday?\""
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"TrendGlucose\", \"arguments\": {\"input\": [{\"start\": \"2023-12-23 00:00:00\", \"end\": \"2023-12-23 23:59:59\"}]}}"
+      },
+      {
+        "from": "observation",
+        "value": "[{\"time\": \"2023-12-23 00:00:00 to 2023-12-23 23:59:59\", \"value\": \"No observable tendency\"}]"
+      },
+      {
+        "from": "gpt",
+        "value": "\"On the day before yesterday, your glucose levels didn’t show any clear upward or downward trend—they stayed relatively stable throughout the day.\""
+      }
+    ],
+    "system": "Current time is 2023-12-25 17:59:00.\nYou are a health monitoring agent provided with a set of tools (functions). Responsibilities:\nTool selection: Choose the appropriate tool(s) based on the user’s query.\nExecution: If tools are needed, return one or more valid tool calls with all required parameters.\nTemporal reasoning: When the query contains natural language time expressions (e.g., \"past week\", \"yesterday morning\"), translate them into precise timestamps or time ranges as tool inputs.\nMulti-turn handling: Some queries may span multiple turns. You should keep track of previous context and compose tool calls accordingly.\nIf no tool is required or suitable, clearly state that. If the query lacks required parameters, explicitly point out what is missing.\ntime_range = {\"start\": \"YYYY-MM-DD HH:MM:SS\", \"end\": \"YYYY-MM-DD HH:MM:SS\"}\nConstraints:\nDo not invent tools outside the provided set.\nAlways follow the required JSON schema for tool calls.\nOnly output tool calls inside the tools call section.\nFunction call JSON Example:\n1. {\"name\": \"FunctionName\", \"arguments\": {\"param1\": \"value1\", \"param2\": \"value2\", \"input\": [{\"start\": \"YYYY-MM-DD HH:MM:SS\", \"end\": \"YYYY-MM-DD HH:MM:SS\", \"label\": \"time label if provided\"}]}}\n2. {\"name\": \"FunctionName\", \"arguments\": {\"param1\": \"value1\", \"param2\": \"value2\"}}\n",
+    "tools": "[{\"name\": \"Statistics\", \"description\": \"Perform basic statistical operations (comparison, delta, max, min, mean, trend) on a list of numerical values.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"compare\", \"delta\", \"max\", \"min\", \"mean\", \"trend\"]}, \"input\": {\"type\": \"array\", \"description\": \"List of numerical values (float or int).\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"TimeInConditions\", \"description\": \"Return the percentage (%) of time that blood glucose stays under the specified condition.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"Hypoglycemia\", \"L1Hypoglycemia\", \"L2Hypoglycemia\", \"Hyperglycemia\", \"L1Hyperglycemia\", \"L2Hyperglycemia\", \"Target\", \"TightTarget\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"GlucoseStats\", \"description\": \"Return statistical measures of blood glucose data. Blood glucose is in mg/dL, CV is in %.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"mean\", \"median\", \"cv\", \"range\", \"iqr\", \"max\", \"min\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"GlucoseRiskMetrics\", \"description\": \"Return blood glucose risk metrics (GMI as %, LBGI/HBGI as indices).\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"gmi\", \"lbgi\", \"hbgi\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"TrendGlucose\", \"description\": \"Return the trend of blood glucose changes over daily statistics.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"input\"]}}, {\"name\": \"GetGlucoseEvents\", \"description\": \"Extract glucose events based on threshold conditions. Return details or count depending on subsequent action.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"Hypoglycemia\", \"L1Hypoglycemia\", \"L2Hypoglycemia\", \"Hyperglycemia\", \"L1Hyperglycemia\", \"L2Hyperglycemia\"]}, \"output_type\": {\"type\": \"string\", \"enum\": [\"time\", \"count\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"GetGlucoseRocEvents\", \"description\": \"Extract rapid rise/fall events based on rate of change (mg/dL/min). Return details or count depending on subsequent action.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"increase\", \"decrease\"]}, \"output_type\": {\"type\": \"string\", \"enum\": [\"time\", \"count\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}, {\"name\": \"GetActivities\", \"description\": \"Retrieve meal and/or insulin events. Units: glucose mg/dL, carbs g, insulin U.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"param\": {\"type\": \"string\", \"enum\": [\"meal\", \"insulin\", \"all\"]}, \"input\": {\"type\": \"array\", \"items\": \"time_range\"}}, \"required\": [\"param\", \"input\"]}}]"
+  }
+]

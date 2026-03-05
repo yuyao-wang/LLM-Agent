@@ -1,0 +1,268 @@
+===== 5febcbfb =====
+5febcbfb update
+ examples/train_lora/llama3_lora_sft.yaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+===== 027f896f =====
+027f896f update
+ .gitignore | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+===== a43e48e7 =====
+a43e48e7 uodate
+ .gitignore | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+===== 5f2745b7 =====
+5f2745b7 update
+ .github/workflows/docker.yml                       |    108 +
+ .gitignore                                         |      1 +
+ =4.45.0,                                           |      0
+ assets/alaya_new.svg                               |     38 +
+ assets/wechat_alaya.png                            |    Bin 0 -> 213947 bytes
+ .../.pre-commit-config.yaml                        |      0
+ data/CGM_event_query_train_set.json                | 117362 +++++
+ data/CGM_merge_query_train_set.json                | 268952 +++++++++++
+ data/CGM_time_query_train_set.json                 | 151592 +++++++
+ data/Diabetica.json                                | 151335 +++++++
+ data/apigen_mt_5k_train_converted.json             | 399246 +++++++++++++++++
+ ...pigen_mt_sampling_3k_train_convert_to_json.json |   3000 +
+ data/dataset_info.json                             |     55 +
+ data/dialogue_train1.json                          | 227680 ++++++++++
+ data/dialogue_train2.json                          |  96802 ++++
+ data/dialogue_train_merge.json                     | 324480 ++++++++++++++
+ data/merge_script.ipynb                            |   1267 +
+ data/toolACE_train.json                            | 167054 +++++++
+ data/toolACE_train_sharegpt.json                   | 178354 ++++++++
+ data/train.bak                                     | 151758 +++++++
+ data/train.json                                    |  69296 +++
+ data/train_cleaned.json                            |  69072 +++
+ data/xlam_function_calling_10k_merged.json         | 140002 ++++++
+ data/xlam_function_calling_10k_train.json          |  10000 +
+ data/xlam_function_calling_13k_train.json          |  30000 ++
+ .../xlam_function_calling_13k_train_processed.json | 420002 ++++++++++++++++++
+ data/xlam_function_calling_30k_train.json          |  30000 ++
+ .../xlam_function_calling_30k_train_processed.json | 420002 ++++++++++++++++++
+ data/xlam_function_calling_60k_train.json          |  60000 +++
+ docker/docker-cuda/Dockerfile.base                 |     55 +
+ docker/docker-cuda/README.md                       |    111 +
+ examples/inference/qwen2_5vl.yaml                  |      4 +
+ examples/merge_lora/qwen2.5_lora_sft.yaml          |     13 +
+ examples/merge_lora/qwen2_5vl_lora_sft.yaml        |     13 +
+ examples/merge_lora/qwen3_8B_lora_sft.yaml         |     13 +
+ examples/train_full/qwen2_5vl_full_sft.yaml        |     49 +
+ examples/train_lora/llama3_lora_sft.yaml           |     14 +-
+ examples/train_lora/qwen2.5_1.5B_lora_sft.yaml     |     42 +
+ examples/train_lora/qwen2.5_lora_sft.yaml          |     46 +
+ examples/train_lora/qwen2_5vl_lora_dpo.yaml        |     49 +
+ examples/train_lora/qwen2_5vl_lora_sft.yaml        |     47 +
+ examples/train_lora/qwen3_8B_lora_sft.yaml         |     46 +
+ ltrain_Log                                         |    459 +
+ ltrain_log                                         |    801 +
+ nohup.out                                          |    243 +
+ src/llamafactory/webui/components/footer.py        |     45 +
+ train.out                                          |   1476 +
+ trainQwen.out                                      |   1085 +
+ 48 files changed, 3492063 insertions(+), 6 deletions(-)
+
+===== 5febcbfb =====
+5febcbfb update
+ examples/train_lora/llama3_lora_sft.yaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+===== 027f896f =====
+027f896f update
+ .gitignore | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+===== a43e48e7 =====
+a43e48e7 uodate
+ .gitignore | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+===== 5f2745b7 =====
+5f2745b7 update
+ .github/workflows/docker.yml                       |    108 +
+ .gitignore                                         |      1 +
+ =4.45.0,                                           |      0
+ assets/alaya_new.svg                               |     38 +
+ assets/wechat_alaya.png                            |    Bin 0 -> 213947 bytes
+ .../.pre-commit-config.yaml                        |      0
+ data/CGM_event_query_train_set.json                | 117362 +++++
+ data/CGM_merge_query_train_set.json                | 268952 +++++++++++
+ data/CGM_time_query_train_set.json                 | 151592 +++++++
+ data/Diabetica.json                                | 151335 +++++++
+ data/apigen_mt_5k_train_converted.json             | 399246 +++++++++++++++++
+ ...pigen_mt_sampling_3k_train_convert_to_json.json |   3000 +
+ data/dataset_info.json                             |     55 +
+ data/dialogue_train1.json                          | 227680 ++++++++++
+ data/dialogue_train2.json                          |  96802 ++++
+ data/dialogue_train_merge.json                     | 324480 ++++++++++++++
+ data/merge_script.ipynb                            |   1267 +
+ data/toolACE_train.json                            | 167054 +++++++
+ data/toolACE_train_sharegpt.json                   | 178354 ++++++++
+ data/train.bak                                     | 151758 +++++++
+ data/train.json                                    |  69296 +++
+ data/train_cleaned.json                            |  69072 +++
+ data/xlam_function_calling_10k_merged.json         | 140002 ++++++
+ data/xlam_function_calling_10k_train.json          |  10000 +
+ data/xlam_function_calling_13k_train.json          |  30000 ++
+ .../xlam_function_calling_13k_train_processed.json | 420002 ++++++++++++++++++
+ data/xlam_function_calling_30k_train.json          |  30000 ++
+ .../xlam_function_calling_30k_train_processed.json | 420002 ++++++++++++++++++
+ data/xlam_function_calling_60k_train.json          |  60000 +++
+ docker/docker-cuda/Dockerfile.base                 |     55 +
+ docker/docker-cuda/README.md                       |    111 +
+ examples/inference/qwen2_5vl.yaml                  |      4 +
+ examples/merge_lora/qwen2.5_lora_sft.yaml          |     13 +
+ examples/merge_lora/qwen2_5vl_lora_sft.yaml        |     13 +
+ examples/merge_lora/qwen3_8B_lora_sft.yaml         |     13 +
+ examples/train_full/qwen2_5vl_full_sft.yaml        |     49 +
+ examples/train_lora/llama3_lora_sft.yaml           |     14 +-
+ examples/train_lora/qwen2.5_1.5B_lora_sft.yaml     |     42 +
+ examples/train_lora/qwen2.5_lora_sft.yaml          |     46 +
+ examples/train_lora/qwen2_5vl_lora_dpo.yaml        |     49 +
+ examples/train_lora/qwen2_5vl_lora_sft.yaml        |     47 +
+ examples/train_lora/qwen3_8B_lora_sft.yaml         |     46 +
+ ltrain_Log                                         |    459 +
+ ltrain_log                                         |    801 +
+ nohup.out                                          |    243 +
+ src/llamafactory/webui/components/footer.py        |     45 +
+ train.out                                          |   1476 +
+ trainQwen.out                                      |   1085 +
+ 48 files changed, 3492063 insertions(+), 6 deletions(-)
+
+===== 5febcbfb =====
+5febcbfb update
+ examples/train_lora/llama3_lora_sft.yaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+===== 027f896f =====
+027f896f update
+ .gitignore | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+===== a43e48e7 =====
+a43e48e7 uodate
+ .gitignore | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+===== 5f2745b7 =====
+5f2745b7 update
+ .github/workflows/docker.yml                       |    108 +
+ .gitignore                                         |      1 +
+ =4.45.0,                                           |      0
+ assets/alaya_new.svg                               |     38 +
+ assets/wechat_alaya.png                            |    Bin 0 -> 213947 bytes
+ .../.pre-commit-config.yaml                        |      0
+ data/CGM_event_query_train_set.json                | 117362 +++++
+ data/CGM_merge_query_train_set.json                | 268952 +++++++++++
+ data/CGM_time_query_train_set.json                 | 151592 +++++++
+ data/Diabetica.json                                | 151335 +++++++
+ data/apigen_mt_5k_train_converted.json             | 399246 +++++++++++++++++
+ ...pigen_mt_sampling_3k_train_convert_to_json.json |   3000 +
+ data/dataset_info.json                             |     55 +
+ data/dialogue_train1.json                          | 227680 ++++++++++
+ data/dialogue_train2.json                          |  96802 ++++
+ data/dialogue_train_merge.json                     | 324480 ++++++++++++++
+ data/merge_script.ipynb                            |   1267 +
+ data/toolACE_train.json                            | 167054 +++++++
+ data/toolACE_train_sharegpt.json                   | 178354 ++++++++
+ data/train.bak                                     | 151758 +++++++
+ data/train.json                                    |  69296 +++
+ data/train_cleaned.json                            |  69072 +++
+ data/xlam_function_calling_10k_merged.json         | 140002 ++++++
+ data/xlam_function_calling_10k_train.json          |  10000 +
+ data/xlam_function_calling_13k_train.json          |  30000 ++
+ .../xlam_function_calling_13k_train_processed.json | 420002 ++++++++++++++++++
+ data/xlam_function_calling_30k_train.json          |  30000 ++
+ .../xlam_function_calling_30k_train_processed.json | 420002 ++++++++++++++++++
+ data/xlam_function_calling_60k_train.json          |  60000 +++
+ docker/docker-cuda/Dockerfile.base                 |     55 +
+ docker/docker-cuda/README.md                       |    111 +
+ examples/inference/qwen2_5vl.yaml                  |      4 +
+ examples/merge_lora/qwen2.5_lora_sft.yaml          |     13 +
+ examples/merge_lora/qwen2_5vl_lora_sft.yaml        |     13 +
+ examples/merge_lora/qwen3_8B_lora_sft.yaml         |     13 +
+ examples/train_full/qwen2_5vl_full_sft.yaml        |     49 +
+ examples/train_lora/llama3_lora_sft.yaml           |     14 +-
+ examples/train_lora/qwen2.5_1.5B_lora_sft.yaml     |     42 +
+ examples/train_lora/qwen2.5_lora_sft.yaml          |     46 +
+ examples/train_lora/qwen2_5vl_lora_dpo.yaml        |     49 +
+ examples/train_lora/qwen2_5vl_lora_sft.yaml        |     47 +
+ examples/train_lora/qwen3_8B_lora_sft.yaml         |     46 +
+ ltrain_Log                                         |    459 +
+ ltrain_log                                         |    801 +
+ nohup.out                                          |    243 +
+ src/llamafactory/webui/components/footer.py        |     45 +
+ train.out                                          |   1476 +
+ trainQwen.out                                      |   1085 +
+ 48 files changed, 3492063 insertions(+), 6 deletions(-)
+
+===== 5febcbfb =====
+5febcbfb update
+ examples/train_lora/llama3_lora_sft.yaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+===== 027f896f =====
+027f896f update
+ .gitignore | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+===== a43e48e7 =====
+a43e48e7 uodate
+ .gitignore | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+===== 5f2745b7 =====
+5f2745b7 update
+ .github/workflows/docker.yml                       |    108 +
+ .gitignore                                         |      1 +
+ =4.45.0,                                           |      0
+ assets/alaya_new.svg                               |     38 +
+ assets/wechat_alaya.png                            |    Bin 0 -> 213947 bytes
+ .../.pre-commit-config.yaml                        |      0
+ data/CGM_event_query_train_set.json                | 117362 +++++
+ data/CGM_merge_query_train_set.json                | 268952 +++++++++++
+ data/CGM_time_query_train_set.json                 | 151592 +++++++
+ data/Diabetica.json                                | 151335 +++++++
+ data/apigen_mt_5k_train_converted.json             | 399246 +++++++++++++++++
+ ...pigen_mt_sampling_3k_train_convert_to_json.json |   3000 +
+ data/dataset_info.json                             |     55 +
+ data/dialogue_train1.json                          | 227680 ++++++++++
+ data/dialogue_train2.json                          |  96802 ++++
+ data/dialogue_train_merge.json                     | 324480 ++++++++++++++
+ data/merge_script.ipynb                            |   1267 +
+ data/toolACE_train.json                            | 167054 +++++++
+ data/toolACE_train_sharegpt.json                   | 178354 ++++++++
+ data/train.bak                                     | 151758 +++++++
+ data/train.json                                    |  69296 +++
+ data/train_cleaned.json                            |  69072 +++
+ data/xlam_function_calling_10k_merged.json         | 140002 ++++++
+ data/xlam_function_calling_10k_train.json          |  10000 +
+ data/xlam_function_calling_13k_train.json          |  30000 ++
+ .../xlam_function_calling_13k_train_processed.json | 420002 ++++++++++++++++++
+ data/xlam_function_calling_30k_train.json          |  30000 ++
+ .../xlam_function_calling_30k_train_processed.json | 420002 ++++++++++++++++++
+ data/xlam_function_calling_60k_train.json          |  60000 +++
+ docker/docker-cuda/Dockerfile.base                 |     55 +
+ docker/docker-cuda/README.md                       |    111 +
+ examples/inference/qwen2_5vl.yaml                  |      4 +
+ examples/merge_lora/qwen2.5_lora_sft.yaml          |     13 +
+ examples/merge_lora/qwen2_5vl_lora_sft.yaml        |     13 +
+ examples/merge_lora/qwen3_8B_lora_sft.yaml         |     13 +
+ examples/train_full/qwen2_5vl_full_sft.yaml        |     49 +
+ examples/train_lora/llama3_lora_sft.yaml           |     14 +-
+ examples/train_lora/qwen2.5_1.5B_lora_sft.yaml     |     42 +
+ examples/train_lora/qwen2.5_lora_sft.yaml          |     46 +
+ examples/train_lora/qwen2_5vl_lora_dpo.yaml        |     49 +
+ examples/train_lora/qwen2_5vl_lora_sft.yaml        |     47 +
+ examples/train_lora/qwen3_8B_lora_sft.yaml         |     46 +
+ ltrain_Log                                         |    459 +
+ ltrain_log                                         |    801 +
+ nohup.out                                          |    243 +
+ src/llamafactory/webui/components/footer.py        |     45 +
+ train.out                                          |   1476 +
+ trainQwen.out                                      |   1085 +
+ 48 files changed, 3492063 insertions(+), 6 deletions(-)
+

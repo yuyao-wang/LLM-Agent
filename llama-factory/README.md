@@ -1,4 +1,4 @@
-# LLM Agent: Multi-Source Health Sensor Monitoring
+# LLM Agent Portfolio: Multi-Source Health Sensor Monitoring
 
 A recruiter-facing portfolio of my hands-on work in an LLM agent project for health sensor monitoring.
 
@@ -42,11 +42,10 @@ Run snapshots:
 - R3 (`Qwen3-8B`, mixture B): train loss `0.2215`, eval loss `0.0827`
 
 ## Repo Map
-- `llama-factory/`: base code workspace (forked framework side)
-- `CGM_baseline/logs/`: raw baseline training logs
 - `portfolio/artifacts/configs/`: training and merge configs
 - `portfolio/artifacts/samples/`: compact dataset examples
 - `portfolio/evidence/`: commit mapping, run snapshots, generated evidence exports
+- `portfolio/evidence/raw_logs/`: raw training logs used for metric extraction
 - `portfolio/scripts/collect_evidence.sh`: regenerate evidence files from git/logs
 
 ## Quick Command

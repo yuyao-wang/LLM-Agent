@@ -1,0 +1,62 @@
+[
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "当前时间是2024-02-17 08:53:00。最近一周内，哪一天我的血糖四分位距最高？"
+      },
+      {
+        "from": "gpt",
+        "value": "根据当前时间2024-02-17 08:53:00和用户输入的时间范围最近一周，将自然语言表达标准化，得到time_var中的起止时间为2024-02-10 00:00:00至2024-02-17 00:00:00。接下来，将这一整体时间段按照天分为七个连续的区间：分别是2024-02-10 00:00:00到2024-02-11 00:00:00, 2024-02-11 00:00:00到2024-02-12 00:00:00，2024-02-12 00:00:00到2024-02-13 00:00:00, 2024-02-13 00:00:00到2024-02-14 00:00:00, 2024-02-14 00:00:00到2024-02-15 00:00:00, 2024-02-15 00:00:00到2024-02-16 00:00:00，以及2024-02-16 00:00:00到2024-02-17 00:00:00。在每一个分段区间内，使用iqrGlucose函数对CGM数据进行处理，分别计算血糖四分位距。最后，比较所有分段区间的结果，确定哪一天的该指标值为最大，并据此输出标准化的答案格式。"
+      },
+      {
+        "from": "human",
+        "value": "output"
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"process_CGM\", \"arguments\": {\"function\": \"iqrGlucose\", \"action\": \"max_min\", \"time_var\": {\"start\": \"2024-02-10 00:00:00\", \"end\": \"2024-02-17 00:00:00\", \"label\": \"最近一周\", \"type\": \"series_day\"}}}"
+      },
+      {
+        "from": "observation",
+        "value": "From 2024-02-10 00:00:00 to 2024-02-17 00:00:00,The highest function value was 43.2 during 2024-02-13 00:00:00 to 2024-02-14 00:00:00, while the lowest was 16.0 during 2024-02-10 00:00:00 to 2024-02-11 00:00:00."
+      },
+      {
+        "from": "gpt",
+        "value": "2024-02-13 00:00:00到2024-02-14 00:00:00这一天你的血糖四分位距最高，为43.2。"
+      }
+    ],
+    "system": "你是一个医疗助手，为用户提供血糖数据处理和监控服务。当接收到用户的血糖监控请求时，请依次完成以下步骤：\n1. **确定兴趣时间段（time_var）**  \n    - 单个时间段用：{\"start\": <起始时间>, \"end\": <结束时间>, \"label\": <时间描述>, \"type\": \"single\"}  \n    - 两个时间段（如对比）用：{\"label\": <时间描述>, \"type\": \"pair\", \"start0\": <起始时间0>, \"end0\": <结束时间0>, \"start1\": <起始时间1>, \"end1\": <结束时间1>}  \n    - 多时间段（如每日/时段序列）用：{\"start\": <起始时间>, \"end\": <结束时间>, \"label\": <时间描述>, \"type\": series_day} 或 {\"start\": <起始时间>, \"end\": <结束时间>, \"label\": <目标时间>, \"type\": \"series_moment\"}  \n2. **选择合适的工具（functions）处理CGM数据**  \n    - 可用工具包括：\"timeInHypoglycemia\", \"timeInL1Hypoglycemia\", \"timeInL2Hypoglycemia\", \"timeInHyperglycemia\", \"timeInL1Hyperglycemia\", \"timeInL2Hyperglycemia\", \"timeInTarget\", \"timeInTightTarget\", \"meanGlucose\", \"cvGlucose\", \"medianGlucose\", \"rangeGlucose\", \"iqrGlucose\", \"Gmi\", \"efIndex\", \"lbgi\", \"hbgi\", \"findHypoglycemicEvents\", \"findHyperglycemicEvents\"\n3. **选择算术操作（actions）处理工具输出**  \n    - 可选动作包括：\"value\", \"delta\", \"compare\", \"trend\", \"max_min\", \"mean\"\n请首先进行推理，然后结构化输出你的调用逻辑，并根据调用结果返回最终答案。调用格式如下：\n{\"name\": \"process_CGM\", \"arguments\": {\"function\": <function>, \"action\": <action>, \"time_var\": <time_var>}}\n",
+    "tools": ""
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "当前时间是2024-03-03 08:41:42。上周星期四到这周星期四期间，哪一天的血糖四分位距最高？"
+      },
+      {
+        "from": "gpt",
+        "value": "根据当前时间2024-03-03 08:41:42和用户输入的时间范围上周星期四~这周星期四，将自然语言表达标准化，得到time_var中的起止时间为2024-02-22 00:00:00至2024-02-29 23:59:59。接下来，将这一整体时间段按照天分为多个连续的区间：分别是2024-02-22 00:00:00到2024-02-23 00:00:00，2024-02-23 00:00:00到2024-02-24 00:00:00，2024-02-24 00:00:00到2024-02-25 00:00:00，2024-02-25 00:00:00到2024-02-26 00:00:00，以及2024-02-26 00:00:00到2024-02-29 23:59:59。在每一个分段区间内，使用iqrGlucose函数对CGM数据进行处理，分别计算血糖四分位距。最后，比较所有分段区间的结果，确定哪一天的该指标值为最大，并据此输出标准化的答案格式。"
+      },
+      {
+        "from": "human",
+        "value": "output"
+      },
+      {
+        "from": "function_call",
+        "value": "{\"name\": \"process_CGM\", \"arguments\": {\"function\": \"iqrGlucose\", \"action\": \"max_min\", \"time_var\": {\"start\": \"2024-02-22 00:00:00\", \"end\": \"2024-02-29 23:59:59\", \"label\": \"上周星期四~这周星期四\", \"type\": \"series_day\"}}}"
+      },
+      {
+        "from": "observation",
+        "value": "From 2024-02-22 00:00:00 to 2024-02-29 23:59:59,The highest function value was 78.2 during 2024-02-25 00:00:00 to 2024-02-26 00:00:00, while the lowest was 34.0 during 2024-02-24 00:00:00 to 2024-02-25 00:00:00."
+      },
+      {
+        "from": "gpt",
+        "value": "2024-02-25 00:00:00到2024-02-26 00:00:00这一天你的血糖四分位距最高，为78.2。"
+      }
+    ],
+    "system": "你是一个医疗助手，为用户提供血糖数据处理和监控服务。当接收到用户的血糖监控请求时，请依次完成以下步骤：\n1. **确定兴趣时间段（time_var）**  \n    - 单个时间段用：{\"start\": <起始时间>, \"end\": <结束时间>, \"label\": <时间描述>, \"type\": \"single\"}  \n    - 两个时间段（如对比）用：{\"label\": <时间描述>, \"type\": \"pair\", \"start0\": <起始时间0>, \"end0\": <结束时间0>, \"start1\": <起始时间1>, \"end1\": <结束时间1>}  \n    - 多时间段（如每日/时段序列）用：{\"start\": <起始时间>, \"end\": <结束时间>, \"label\": <时间描述>, \"type\": series_day} 或 {\"start\": <起始时间>, \"end\": <结束时间>, \"label\": <目标时间>, \"type\": \"series_moment\"}  \n2. **选择合适的工具（functions）处理CGM数据**  \n    - 可用工具包括：\"timeInHypoglycemia\", \"timeInL1Hypoglycemia\", \"timeInL2Hypoglycemia\", \"timeInHyperglycemia\", \"timeInL1Hyperglycemia\", \"timeInL2Hyperglycemia\", \"timeInTarget\", \"timeInTightTarget\", \"meanGlucose\", \"cvGlucose\", \"medianGlucose\", \"rangeGlucose\", \"iqrGlucose\", \"Gmi\", \"efIndex\", \"lbgi\", \"hbgi\", \"findHypoglycemicEvents\", \"findHyperglycemicEvents\"\n3. **选择算术操作（actions）处理工具输出**  \n    - 可选动作包括：\"value\", \"delta\", \"compare\", \"trend\", \"max_min\", \"mean\"\n请首先进行推理，然后结构化输出你的调用逻辑，并根据调用结果返回最终答案。调用格式如下：\n{\"name\": \"process_CGM\", \"arguments\": {\"function\": <function>, \"action\": <action>, \"time_var\": <time_var>}}\n",
+    "tools": ""
+  }
+]

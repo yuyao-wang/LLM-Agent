@@ -1,0 +1,48 @@
+CGM_baseline/logs/nohup.out:58:[INFO|2025-08-29 16:56:01] llamafactory.data.loader:143 >> Loading dataset dialogue_train_merge.json...
+CGM_baseline/logs/ltrain_log:49:[INFO|2025-08-06 00:18:33] llamafactory.data.loader:143 >> Loading dataset CGM_merge_query_train_set.json...
+CGM_baseline/logs/ltrain_log:295:{'eval_loss': 0.09092111885547638, 'eval_runtime': 56.3933, 'eval_samples_per_second': 1.596, 'eval_steps_per_second': 1.596, 'epoch': 0.36}
+CGM_baseline/logs/ltrain_log:398:{'eval_loss': 0.0696149617433548, 'eval_runtime': 56.7903, 'eval_samples_per_second': 1.585, 'eval_steps_per_second': 1.585, 'epoch': 0.72}
+CGM_baseline/logs/ltrain_log:501:{'eval_loss': 0.06457532197237015, 'eval_runtime': 55.1811, 'eval_samples_per_second': 1.631, 'eval_steps_per_second': 1.631, 'epoch': 1.08}
+CGM_baseline/logs/ltrain_log:604:{'eval_loss': 0.0618620328605175, 'eval_runtime': 56.8512, 'eval_samples_per_second': 1.583, 'eval_steps_per_second': 1.583, 'epoch': 1.44}
+CGM_baseline/logs/ltrain_log:738:Training completed. Do not forget to share your model on huggingface.co/models =)
+CGM_baseline/logs/ltrain_log:775:{'eval_loss': 0.06068003922700882, 'eval_runtime': 56.2567, 'eval_samples_per_second': 1.6, 'eval_steps_per_second': 1.6, 'epoch': 1.8}
+CGM_baseline/logs/ltrain_log:778:{'train_runtime': 36833.3042, 'train_samples_per_second': 0.482, 'train_steps_per_second': 0.007, 'train_loss': 0.15332092485134152, 'epoch': 1.99}
+CGM_baseline/logs/ltrain_log:782:  train_loss               =      0.1533
+CGM_baseline/logs/ltrain_log:783:  train_runtime            = 10:13:53.30
+CGM_baseline/logs/ltrain_log:787:Figure saved at: saves_tool/Qwen2.5-7B-merge/training_eval_loss.png
+CGM_baseline/logs/ltrain_log:798:  eval_loss               =     0.0605
+CGM_baseline/logs/ltrain_log:799:  eval_runtime            = 0:00:55.71
+CGM_baseline/logs/trainQwen.out:59:[INFO|2025-08-30 15:28:21] llamafactory.data.loader:143 >> Loading dataset dialogue_train_merge.json...
+CGM_baseline/logs/trainQwen.out:287:                                               [A{'eval_loss': 0.43792739510536194, 'eval_runtime': 78.0535, 'eval_samples_per_second': 1.896, 'eval_steps_per_second': 0.948, 'epoch': 0.22}
+CGM_baseline/logs/trainQwen.out:374:                                               [A{'eval_loss': 0.31567299365997314, 'eval_runtime': 77.1416, 'eval_samples_per_second': 1.919, 'eval_steps_per_second': 0.959, 'epoch': 0.44}
+CGM_baseline/logs/trainQwen.out:461:                                               [A{'eval_loss': 0.2953495383262634, 'eval_runtime': 76.1709, 'eval_samples_per_second': 1.943, 'eval_steps_per_second': 0.971, 'epoch': 0.66}
+CGM_baseline/logs/trainQwen.out:548:                                               [A{'eval_loss': 0.2874652147293091, 'eval_runtime': 76.6237, 'eval_samples_per_second': 1.932, 'eval_steps_per_second': 0.966, 'epoch': 0.88}
+CGM_baseline/logs/trainQwen.out:635:                                               [A{'eval_loss': 0.28295546770095825, 'eval_runtime': 75.7324, 'eval_samples_per_second': 1.954, 'eval_steps_per_second': 0.977, 'epoch': 1.09}
+CGM_baseline/logs/trainQwen.out:722:                                               [A{'eval_loss': 0.27928608655929565, 'eval_runtime': 76.9006, 'eval_samples_per_second': 1.925, 'eval_steps_per_second': 0.962, 'epoch': 1.31}
+CGM_baseline/logs/trainQwen.out:809:                                               [A{'eval_loss': 0.27643778920173645, 'eval_runtime': 77.682, 'eval_samples_per_second': 1.905, 'eval_steps_per_second': 0.953, 'epoch': 1.53}
+CGM_baseline/logs/trainQwen.out:896:                                               [A{'eval_loss': 0.27491992712020874, 'eval_runtime': 72.3683, 'eval_samples_per_second': 2.045, 'eval_steps_per_second': 1.023, 'epoch': 1.75}
+CGM_baseline/logs/trainQwen.out:983:                                               [A{'eval_loss': 0.2737196683883667, 'eval_runtime': 73.7612, 'eval_samples_per_second': 2.006, 'eval_steps_per_second': 1.003, 'epoch': 1.97}
+CGM_baseline/logs/trainQwen.out:1023:Training completed. Do not forget to share your model on huggingface.co/models =)
+CGM_baseline/logs/trainQwen.out:1026:                                                     {'train_runtime': 55170.5815, 'train_samples_per_second': 0.529, 'train_steps_per_second': 0.008, 'train_loss': 0.3902088286061036, 'epoch': 1.99}
+CGM_baseline/logs/trainQwen.out:1066:  train_loss               =       0.3902
+CGM_baseline/logs/trainQwen.out:1067:  train_runtime            =  15:19:30.58
+CGM_baseline/logs/trainQwen.out:1071:Figure saved at: saves_tool/Qwen3-8B-merge/training_eval_loss.png
+CGM_baseline/logs/trainQwen.out:1080:  eval_loss               =     0.2737
+CGM_baseline/logs/trainQwen.out:1081:  eval_runtime            = 0:01:12.86
+CGM_baseline/logs/train.out:60:[INFO|2025-09-07 13:52:33] llamafactory.data.loader:143 >> Loading dataset apigen_train_merge.json...
+CGM_baseline/logs/train.out:670:                                               [A{'eval_loss': 0.2487715631723404, 'eval_runtime': 77.4502, 'eval_samples_per_second': 1.924, 'eval_steps_per_second': 0.968, 'epoch': 0.22}
+CGM_baseline/logs/train.out:758:                                               [A{'eval_loss': 0.12938417494297028, 'eval_runtime': 75.5762, 'eval_samples_per_second': 1.972, 'eval_steps_per_second': 0.992, 'epoch': 0.43}
+CGM_baseline/logs/train.out:846:                                               [A{'eval_loss': 0.10767769813537598, 'eval_runtime': 76.602, 'eval_samples_per_second': 1.945, 'eval_steps_per_second': 0.979, 'epoch': 0.65}
+CGM_baseline/logs/train.out:934:                                               [A{'eval_loss': 0.099831722676754, 'eval_runtime': 75.8995, 'eval_samples_per_second': 1.963, 'eval_steps_per_second': 0.988, 'epoch': 0.87}
+CGM_baseline/logs/train.out:1022:                                               [A{'eval_loss': 0.09370006620883942, 'eval_runtime': 79.4807, 'eval_samples_per_second': 1.875, 'eval_steps_per_second': 0.944, 'epoch': 1.09}
+CGM_baseline/logs/train.out:1110:                                               [A{'eval_loss': 0.08973535150289536, 'eval_runtime': 77.3913, 'eval_samples_per_second': 1.925, 'eval_steps_per_second': 0.969, 'epoch': 1.31}
+CGM_baseline/logs/train.out:1198:                                               [A{'eval_loss': 0.08733396977186203, 'eval_runtime': 77.5614, 'eval_samples_per_second': 1.921, 'eval_steps_per_second': 0.967, 'epoch': 1.53}
+CGM_baseline/logs/train.out:1286:                                               [A{'eval_loss': 0.08560109883546829, 'eval_runtime': 81.753, 'eval_samples_per_second': 1.823, 'eval_steps_per_second': 0.917, 'epoch': 1.74}
+CGM_baseline/logs/train.out:1374:                                               [A{'eval_loss': 0.08275424689054489, 'eval_runtime': 79.4548, 'eval_samples_per_second': 1.875, 'eval_steps_per_second': 0.944, 'epoch': 1.96}
+CGM_baseline/logs/train.out:1414:Training completed. Do not forget to share your model on huggingface.co/models =)
+CGM_baseline/logs/train.out:1417:                                                    {'train_runtime': 37925.4704, 'train_samples_per_second': 0.776, 'train_steps_per_second': 0.012, 'train_loss': 0.22153777521770593, 'epoch': 2.0}
+CGM_baseline/logs/train.out:1457:  train_loss               =       0.2215
+CGM_baseline/logs/train.out:1458:  train_runtime            =  10:32:05.47
+CGM_baseline/logs/train.out:1462:Figure saved at: saves_tool/Qwen3-8B-merge/training_eval_loss.png
+CGM_baseline/logs/train.out:1471:  eval_loss               =     0.0827
+CGM_baseline/logs/train.out:1472:  eval_runtime            = 0:01:17.97
