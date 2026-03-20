@@ -1,6 +1,16 @@
-# LLM Agent: Multi-Source Health Sensor Monitoring
+# LLM Agent System (Portfolio Snapshot)
 
-A recruiter-facing portfolio of my hands-on work in an LLM agent project for health sensor monitoring.
+> This repository is a **shareable portfolio snapshot** of my early-stage work on an LLM agent system.
+
+## My Contributions
+
+- Designed and implemented an early-stage LLM agent pipeline
+- Built multi-turn tool-calling data format (structured reasoning + tool use)
+- Implemented and tuned LoRA/SFT training for LLM fine-tuning
+- Ran baseline experiments and collected training logs/metrics
+- Built this standalone repo to demonstrate my work
+
+**Authorship note:** I am a co-author (third author, non-lead). The final system was later developed by the full team.
 
 ## Project Snapshot
 - Focus: temporal and multi-turn tool-calling over heterogeneous health-related signals (CGM + event streams).
